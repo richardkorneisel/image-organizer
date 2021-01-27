@@ -1,6 +1,20 @@
 const express = require('express');
 const app = express();
 
+// //Middleware
+// app.use((req, res, next) => {
+//     console.log('I run for all routes');
+//     next();
+// });
+
+// app.use(express.urlencoded({ extended: true }));
+
+app.get('/pokemon', (req, res) => {
+    res.render('index.ejs', {
+    pokemons: pokemon
+    });     
+});
+
 const pokemon = [
     {
       name: "Bulbasaur",
@@ -37,9 +51,9 @@ app.get('/pokemon', (req, res) => {
     res.send(pokemon);
 });
 
-app.get('/pokemon/:index', (req, res) => {
-    res.send(pokemon[req.params.index]);
-});
+// app.get('/pokemon/:index', (req, res) => {
+//     res.send(pokemon[req.params.index]);
+// });
 
 app.listen(3000, ()=>{
     console.log("I am listening");
