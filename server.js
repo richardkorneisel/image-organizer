@@ -47,13 +47,24 @@ const pokemon = [
   ];
 
 
-app.get('/pokemon', (req, res) => {
-    res.send(pokemon);
+// app.get('/pokemon', (req, res) => {
+//     res.send(pokemon);
+// });
+//show - for one thing
+app.get('/pokemon/:index', (req, res) => {
+    // let pokemon = pokemons[req.params.index];
+    // res.send(pokemon);
+    res.render('show.ejs', {       //shows html from show.ejs file 
+        pokemon: pokemon[req.params.index]     //left of colon is variable, fruit is index route, right is 
+    })                       
+})
+
+//Get route 
+app.get('/pokemon/:index', (req, res) => {
+    res.send(pokemon[req.params.index]);
 });
 
-// app.get('/pokemon/:index', (req, res) => {
-//     res.send(pokemon[req.params.index]);
-// });
+
 
 app.listen(3000, ()=>{
     console.log("I am listening");
