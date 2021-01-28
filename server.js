@@ -9,12 +9,6 @@ const app = express();
 
 // app.use(express.urlencoded({ extended: true }));
 
-app.get('/pokemon', (req, res) => {
-    res.render('index.ejs', {
-    pokemons: pokemon
-    });     
-});
-
 const pokemon = [
     {
       name: "Bulbasaur",
@@ -50,6 +44,12 @@ const pokemon = [
 // app.get('/pokemon', (req, res) => {
 //     res.send(pokemon);
 // });
+app.get('/pokemon', (req, res) => {
+    res.render('index.ejs', {
+    pokemons: pokemon
+    });     
+});
+
 //show - for one thing
 app.get('/pokemon/:index', (req, res) => {
     // let pokemon = pokemons[req.params.index];

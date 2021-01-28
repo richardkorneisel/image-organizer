@@ -6,20 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <ul class="pokemon">
-        <% pokemons.forEach((pokemon, id) => { %>
-            <li><a href="/pokemon/<%= id %>"><%= pokemon.name %></a>
+        <ul class="pokemon">
+            <% pokemons.forEach((pokemon, id) => { %>
+                <li><a href="/pokemon/<%= id %>"><%= pokemon.name %></a>
             
-            </li>
-        <% }) %>        
+                </li>
+            <% }) %>        
         
-        <!-- <li>Bulbasaur</li>
-        <li>Ivysaur</li>
-        <li>Vennusaur</li>
-        <li>Charmander</li>
-        <li>Charizard</li>
-        <li>Squirtle</li>
-        <li>Wartortle</li> -->
-    </ul>
+        </ul>
 </body>
 </html>
