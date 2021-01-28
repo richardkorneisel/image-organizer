@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+    <nav>
+        <a href="/pokemon/new">Create a new Pokemon</a> 
         <ul class="pokemon">
             <% pokemons.forEach((pokemon, id) => { %>
                 <li><a href="/pokemon/<%= id %>"><%= pokemon.name %></a>
@@ -14,5 +16,6 @@
             <% }) %>        
         
         </ul>
+    </nav>
 </body>
 </html>

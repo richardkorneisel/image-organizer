@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
 
-// //Middleware
-// app.use((req, res, next) => {
-//     console.log('I run for all routes');
-//     next();
-// });
+//Middleware
+app.use((req, res, next) => {
+    console.log('I run for all routes');
+    next();
+});
 
-// app.use(express.urlencoded({ extended: true }));
-
+app.use(express.urlencoded({ extended: true }));
+//// End Middleware
 const pokemon = [
     {
       name: "Bulbasaur",
@@ -49,6 +49,16 @@ app.get('/pokemon', (req, res) => {
     pokemons: pokemon
     });     
 });
+//New
+app.get('/pokemon/new', (req, res) => {
+    res.render('new.ejs'); 
+});
+
+//Post
+app.post('/pokemon', (req, res) => {    
+    pokemon.push(req.body);  
+    res.redirect('/pokemon');      
+});
 
 //show - for one thing
 app.get('/pokemon/:index', (req, res) => {
@@ -63,8 +73,6 @@ app.get('/pokemon/:index', (req, res) => {
 app.get('/pokemon/:index', (req, res) => {
     res.send(pokemon[req.params.index]);
 });
-
-
 
 app.listen(3000, ()=>{
     console.log("I am listening");
