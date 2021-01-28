@@ -10,8 +10,11 @@
         <a href="/pokemon/new">Create a new Pokemon</a> 
         <ul class="pokemon">
             <% pokemons.forEach((pokemon, id) => { %>
-                <li><a href="/pokemon/<%= id %>"><%= pokemon.name %></a>
-            
+                <li><a href="/pokemon/<%= id %>"><%= pokemon.name %></a></br>
+                    <form action="/pokemon/<%=id; %>?_method=DELETE" method="POST"> 
+                        <input type="submit" value="DELETE"/>
+                    </form>    
+                    <a href="/pokemon/<%=id; %>/edit">Edit</a>  
                 </li>
             <% }) %>        
         

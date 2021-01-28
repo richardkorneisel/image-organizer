@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const methodOverride = require('method-override');
 
 //Middleware
 app.use((req, res, next) => {
@@ -8,6 +9,8 @@ app.use((req, res, next) => {
 });
 
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
+
 //// End Middleware
 const pokemon = [
     {
@@ -49,6 +52,11 @@ app.get('/pokemon', (req, res) => {
     pokemons: pokemon
     });     
 });
+// Delete
+app.delete('/pokemon/:index', (req, res) => {
+	pokemon.splice(req.params.index, 1); 
+	res.redirect('/pokemon');  
+});
 //New
 app.get('/pokemon/new', (req, res) => {
     res.render('new.ejs'); 
@@ -59,8 +67,22 @@ app.post('/pokemon', (req, res) => {
     pokemon.push(req.body);  
     res.redirect('/pokemon');      
 });
+app.get('/pokemon/:index/edit', (req, res) => {
+    res.render(
+    	'edit.ejs', 
+    	{ 
+            pokemon: pokemon[req.params.index], 
+    		index: req.params.index 
+     	}
+    );
+});
+   // Update route
+app.put('/pokemon/:index', (req, res) => { 
+    pokemon[req.params.index] = req.body;    
+    res.redirect('/pokemon'); 
+    });
 
-//show - for one thing
+     //show - for one thing
 app.get('/pokemon/:index', (req, res) => {
     // let pokemon = pokemons[req.params.index];
     // res.send(pokemon);
