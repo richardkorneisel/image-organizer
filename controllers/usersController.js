@@ -1,7 +1,7 @@
 const express = require("express");     //still using express
 const router = express.Router();        //need express router
 
-const users = require("../models/users");   //location of model(data)
+const users = require("../users");   //location of model(data)
 
 //Index (Home)page
 router.get('/', (req, res) => {                 

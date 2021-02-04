@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
-const pokemon = require('./controllers/pokemon.js');
+//const pokemon = require('./controllers/pokemon.js'); //replaced below in app.use('/pokemon', require('./controllers/pokemon.js')); for pokemon
 
 //Middleware
 app.use((req, res, next) => {
@@ -11,8 +11,8 @@ app.use((req, res, next) => {
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride('_method'));
-app.use('/pokemon', pokemon)
+app.use(methodOverride('_method'));//Need because Delete not available, converts method to Delete
+app.use('/pokemon', require('./controllers/pokemon.js'));
 app.use("/users", require("./controllers/usersController.js"));     
 //***************
 //// End Middleware
