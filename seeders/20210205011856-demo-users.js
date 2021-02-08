@@ -11,6 +11,7 @@ module.exports = {
           password: "prettyawesome",
           createdAt: new Date(),
           updatedAt: new Date(),
+          teamId: 1,
         },
         {
           name: "Clark Kent",
@@ -18,6 +19,7 @@ module.exports = {
           password: "canfly",
           createdAt: new Date(),
           updatedAt: new Date(),
+          teamId: 2
         },
         {
           name: "Bruce Wayne",
@@ -25,6 +27,7 @@ module.exports = {
           password: "hasgadgets",
           createdAt: new Date(),
           updatedAt: new Date(),
+          teamId: 3
         },
       ],
       {}
@@ -32,11 +35,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
-  },
+    await queryInterface.bulkDelete('Users', null, {});
+  }
 };

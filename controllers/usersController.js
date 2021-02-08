@@ -3,6 +3,8 @@ const router = express.Router();        //need express router
 
 // const users = require("../users");   //location of model(data)
 const User = require('../models').User;
+const Team = require('../models').Team;
+const Pokemon = require('../models').Pokemon;
 //Index (Home)page
 router.get('/', (req, res) => {                 
     res.render('users/index.ejs')     
@@ -24,16 +26,16 @@ router.get("/login", (req, res) => {
 //   });  
 // Serialized login 
 router.post("/login", (req, res) => {
-  User.findOne({
-      where: {
-          username: req.body.username,
-          password: req.body.password
-      }
-  }) .then((thisUser)=>{
-      console.log(thisUser);
-      res.redirect('/users/profile/' + thisUser.id) 
-    })
-    
+    User.findOne({
+        where: {
+            username: req.body.username,
+            password: req.body.password
+        }
+    }).then((thisUser) => {
+        //console.log(thisUser);
+        res.redirect('/users/profile/' + thisUser.id);
+    });
+
 });  
 // Post to profile file, need to create 
 // router.post("/profile", (req, res) => {
@@ -57,14 +59,31 @@ router.post('/profile', (req, res)=>{
 // 	});
 // });
 // SerializedUsed '/:index/edit', from fruits to it was closest
-router.get('/profile/:id', (req, res) =>{   //need to have index, referenced below    
-    User.findByPk(req.params.id).then((thisUser)=> {
-    res.render('users/profile.ejs', { 
-		userInfo: thisUser, 
-        index: thisUser.id
+// router.get("/profile/:id", (req, res) => {
+//     User.findByPk(req.params.id).then((thisUser) => {
+//         Team.findAll().then((allTeams) => {
+//             console.log("list of teams" + allTeams);
+//             res.render("users/profile.ejs", {
+//                 userInfo: thisUser,
+//                 index: req.params.id,
+//                 teams: allTeams,
+//             })
+//         })
+//     });
+// })
+router.get("/profile/:id", (req, res) => {
+    User.findByPk(req.params.id, {  // was player
+      include: [{ model: Team }, { model: Pokemon }],
+    }).then((singlePlayer) => {
+      Team.findAll().then((allTeams) => {
+        console.log(singlePlayer);
+        res.render("users/profile.ejs", {
+      player: singlePlayer, //was player
+      teams: allTeams,
         });
-	});
-});
+      });
+    });
+  });
 // Used above for template
 router.get("/login", (req, res) => {
     res.render("users/login.ejs");
