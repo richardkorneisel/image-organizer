@@ -17,9 +17,12 @@ app.use('/pokemon', require('./controllers/pokemon.js'));
 app.use("/users", require("./controllers/usersController.js"));     
  
 //Get route 
-app.get('/pokemon/:index', (req, res) => {
-    res.send(pokemon[req.params.index]);
-});
+// app.get('/pokemon/:index', (req, res) => {
+//     res.send(pokemon[req.params.index]);
+// });
+app.get("/", (req, res) => {
+    res.render("users/index.ejs");
+  });
 
 app.listen(process.env.PORT, ()=>{
     console.log("I am listening");
