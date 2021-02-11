@@ -50,11 +50,6 @@ router.put("/:id", (req, res) => {
     });
   });
 
-// router.get('/:index', (req, res) => {
-//     res.render('show.ejs', {       
-//         pokemon: pokemon[req.params.index]
-//     })                       
-// })
 router.get("/:id", (req, res) => {
     Pokemon.findByPk(req.params.id).then((pokemon) => {
       res.render("show.ejs", {
