@@ -26,13 +26,14 @@ router.get("/login", (req, res) => {
 //   });  
 // Serialized login 
 router.post("/login", (req, res) => {
-    User.findOne({
+  console.log(req.body);  
+  User.findOne({
         where: {
             username: req.body.username,
             password: req.body.password
         }
     }).then((thisUser) => {
-        //console.log(thisUser);
+        console.log(thisUser);
         res.redirect('/users/profile/' + thisUser.id);
     });
 
@@ -46,8 +47,10 @@ router.post("/login", (req, res) => {
 //     res.redirect(`profile/${userIndex}`);
 //   });  
 router.post('/profile', (req, res)=>{
-    User.create(req.body).then((newUser) => {
+  console.log(req.body);  
+  User.create(req.body).then((newUser) => {
       res.redirect("profile/" + newUser.id);
+    
     });
   });
 
@@ -94,7 +97,9 @@ router.get("/login", (req, res) => {
 //     console.log(users) 
 // 	res.redirect('/users/profile/' + index); 
 // });
+//Current PUT not adding ID
 router.put("/profile/:id", (req, res) => {
+    console.log ("Hello", req.body, req.params.id)
     User.update(req.body, {
       where: { id: req.params.id },
       returning: true,
@@ -102,6 +107,17 @@ router.put("/profile/:id", (req, res) => {
       res.redirect("/users/profile/" + req.params.id);
     });
   });
+// router.put('/profile/:index', (req, res) => {
+//   // console.log('hello!', req.body, req.params.index);
+//   // users[req.params.index] = req.body;
+//   // let index = req.params.index;
+//   // res.redirect('/users/profile/'+index);    users.update(req.body, {
+//   where: { id: req.params.index },
+//   // returnin: true
+// }).then((thisUser) => {
+//   res.redirect('/users/profile/' + req.params.index);
+// });
+// });
 
 // router.delete('/:id', (req, res) => {
 //     users.splice(req.params.index, 1); 
