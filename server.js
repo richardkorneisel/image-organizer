@@ -16,10 +16,10 @@ app.use(methodOverride('_method'));//Need because Delete not available, converts
 app.use('/pokemon', require('./controllers/pokemonController.js'));
 app.use("/users", require("./controllers/usersController.js"));     
  
-//Get route 
-// app.get('/pokemon/:index', (req, res) => {
-//     res.send(pokemon[req.params.index]);
-// });
+// Get route 
+app.get('/pokemon/:index', (req, res) => {
+    res.send(pokemon[req.params.index]);
+});
 app.get("/", (req, res) => {
     res.render("users/index.ejs");
   });
