@@ -29,6 +29,7 @@ router.post("/", (req, res) => {
     }
   
     Pokemon.create(req.body).then((newPokemon) => {
+      console.log(newPokemon)
       res.redirect("/pokemon");
     });
   });
