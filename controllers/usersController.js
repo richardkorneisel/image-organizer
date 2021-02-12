@@ -2,9 +2,9 @@ const express = require("express");     //still using express
 const router = express.Router();        //need express router
 
 // const users = require("../users");   //location of model(data)
-const User = require('../models').User;
-const Team = require('../models').Team;
-const Pokemon = require('../models').Pokemon;
+const User = require('../Models').User;
+const Team = require('../Models').Team;
+const Pokemon = require('../Models').Pokemon;
 //Index (Home)page
 router.get('/', (req, res) => {                 
   res.render('users/index.ejs')     
