@@ -20,27 +20,31 @@ pokemon-and-picture-organizer-project-2-1st-full-stack-app is a project to creat
       - a link to your hosted working app in the README.md file in your github repo
 
 ## Purpose
+  
   This app is intended to be a place that users can easily download and organize photos by event and date and attach any initial comments of the moment.
   It would allow the user to log in and navigate to their events when desired.  The user could create additional event pages, add to, delete and modify their events.
 
 ## Repo Locations
+  
   ### Initial App - Project 2 - Building-Your-First-Full-Stack-Application--Started
   - The initial project can be found on github at https://github.com/richardkorneisel/Project-2-Building-Your-First-Full-Stack-Application---Started
   - I initially started this project from starter code.  I added a controller, migrations, a model and seeder files.  
   - The starter code had built in JWT-AUTH built in.  My code at times conflicted with this encryption.  This and other route delays was not going to allow me to finish a viable product on time so I scrapped this line of code and decided to grab a lab project, make it work so I could turn in a project.
   - The intent would be to finish or move routes from the lab project and get this initial app up and running.
+  
   ### Working App - pokemon-and-picture-organizer-project-2-1st-full-stack-app
-  - A project that meets the minimun viable product (MVP) requirements can be found at  
-https://github.com/richardkorneisel/pokemon-and-picture-organizer-project-2-1st-full-stack-app
+  - A project that meets the minimun viable product (MVP) requirements can be found at https://github.com/richardkorneisel/pokemon-app
   - This is a modification of a lab project.  I had built the routes and had to finish making the routes functional.
+  
   #### Unfinished Issues
   - Code still has descriptions and tags from lab code. Need to covert to make more meaninful to future developers.
   - App requires user to download link to picture.  Want to add the ability to navigate to the picture and download.
-  - App does not have all the links between pages that I had sketched out.  This makes it a less user friendly as the user will have to manually go back to the beginning of the app in some places.
+  - App was to have a date, event name, event discription and the picture.  Did not have time to successfully migrate these changes.  
+  - App needs to seperate pictures by event and prevent user from seeing other users pictures. 
 
 ## Installation
 
-You can open this website from Heroku at https://image-organizer-project-2.herokuapp.com/.
+You can open this website from Heroku at https://image-organizer-project-2.herokuapp.com/  .  Main repository for project is at https://dashboard.heroku.com/apps/image-organizer-project-2  .
 
 ## Technologies Used
 This project is a full stack app
