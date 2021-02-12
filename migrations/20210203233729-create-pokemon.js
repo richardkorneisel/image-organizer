@@ -30,3 +30,16 @@ module.exports = {
     await queryInterface.dropTable('Pokemons');
   }
 };
+
+// date: {
+//   type: Sequelize.INTEGER
+// },
+// title: {
+//   type: Sequelize.STRING
+// },
+// comment: {
+//   type: Sequelize.STRING
+// },
+// img: {
+//   type: Sequelize.STRING
+// },

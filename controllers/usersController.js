@@ -7,7 +7,7 @@ const Team = require('../models').Team;
 const Pokemon = require('../models').Pokemon;
 //Index (Home)page
 router.get('/', (req, res) => {                 
-    res.render('users/index.ejs')     
+  res.render('users/index.ejs')     
 });
 // Used new.ejs for template
 router.get("/signup", (req, res) => {

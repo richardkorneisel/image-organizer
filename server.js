@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));//Need because Delete not available, converts method to Delete
-app.use('/pokemon', require('./controllers/pokemon.js'));
+app.use('/pokemon', require('./controllers/pokemonController.js'));
 app.use("/users", require("./controllers/usersController.js"));     
  
 //Get route 
