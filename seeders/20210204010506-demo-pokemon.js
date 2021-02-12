@@ -6,50 +6,14 @@ module.exports = {
       "Pokemons",
       [
         {
-          name: "Bulbasaur",
-          img: "http://img.pokemondb.net/artwork/bulbasaur.jpg",
+          name: "Jaguar",
+          img: "https://i.imgur.com/DsJ8KhG.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          name: "Ivysaur",
-          img: "http://img.pokemondb.net/artwork/ivysaur.jpg",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          name: "Venusaur",
-          img: "http://img.pokemondb.net/artwork/venusaur.jpg",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          name: "Charmander",
-          img: "http://img.pokemondb.net/artwork/charmander.jpg",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          name: "Charizard",
-          img: "http://img.pokemondb.net/artwork/charizard.jpg",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          name: "Squirtle",
-          img: "http://img.pokemondb.net/artwork/squirtle.jpg",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          name: "Wartortle",
-          img: "http://img.pokemondb.net/artwork/wartortle.jpg",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          name: "Pikachu",
-          img: "https://img.pokemondb.net/artwork/large/pikachu.jpg",
+          name: "Baby Hippo",
+          img: "https://i.imgur.com/rtdRRrW.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         }
