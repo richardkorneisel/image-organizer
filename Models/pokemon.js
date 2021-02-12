@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
   return Pokemon;
 };
 
+
 // date: DataTypes.INTEGER,
 //     title: DataTypes.STRING,
 //     comment: DataTypes.STRING,
