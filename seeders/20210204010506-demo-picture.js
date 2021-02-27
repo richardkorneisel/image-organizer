@@ -3,7 +3,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      "Pokemons",
+      "Pictures",
       [
         {
           name: "Jaguar",

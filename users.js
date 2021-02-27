@@ -1,18 +1,18 @@
 const users = [
     {
         name:'Jim James',
-        username: 'pokeydokey',
-        password: 'getthemall'
+        username: 'safarijim',
+        password: 'getthepic'
     },
     {
         name:'Fred Fjord',
-        username: 'ichooseyou',
-        password: `pokeyball`
+        username: 'birthday',
+        password: `party`
     },
     {
         name:'Ally Babba',
-        username: 'pokeymonmaster',
-        password: 'lets battle'
+        username: 'forty',
+        password: 'thieves'
     }
 ]
 

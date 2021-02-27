@@ -1,18 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const Pokemon = require('../Models').Pokemon;
+const Picture = require('../Models').Picture;
 
 router.get("/", (req, res) => {
-    Pokemon.findAll().then((pokemons) => {
+    Picture.findAll().then((pictures) => {
       res.render("index.ejs", {
-        pokemons: pokemons,
+        pictures: pictures,
       });
     });
   });
 //Delete
   router.delete("/:id", (req, res) => {
-    Pokemon.destroy({ where: { id: req.params.id } }).then(() => {
-      res.redirect("/pokemon");
+    Picture.destroy({ where: { id: req.params.id } }).then(() => {
+      res.redirect("/picture");
     });
   });
 //New
@@ -28,33 +28,33 @@ router.post("/", (req, res) => {
       req.body.readyToEat = false;
     }
   
-    Pokemon.create(req.body).then((newPokemon) => {
-      console.log(newPokemon)
-      res.redirect("/pokemon");
+    Picture.create(req.body).then((newpicture) => {
+      console.log(newpicture)
+      res.redirect("/picture");
     });
   });
 //Edit
 router.get("/:id/edit", function (req, res) {
-    Pokemon.findByPk(req.params.id).then((pokemon) => {
+    Picture.findByPk(req.params.id).then((picture) => {
       res.render("edit.ejs", {
-        pokemon: pokemon,
+        picture: picture,
       });
     });
   });
 // Update route
 router.put("/:id", (req, res) => {
-    Pokemon.update(req.body, {
+    Picture.update(req.body, {
       where: { id: req.params.id },
       returning: true,
-    }).then((pokemon) => {
-      res.redirect("/pokemon");
+    }).then((picture) => {
+      res.redirect("/picture");
     });
   });
 
 router.get("/:id", (req, res) => {
-    Pokemon.findByPk(req.params.id).then((pokemon) => {
+    Picture.findByPk(req.params.id).then((picture) => {
       res.render("show.ejs", {
-        pokemon: pokemon,
+        picture: picture,
       });
     });
   });

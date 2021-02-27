@@ -3,23 +3,23 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Pokemon extends Model {
+  class Picture extends Model {
    static associate(models) {
-      Pokemon.belongsToMany(models.User, {
-        through: 'PlayerPokemon',
-        foreignKey: 'pokemonId',
+      Picture.belongsToMany(models.User, {
+        through: 'PlayerPicture',
+        foreignKey: 'PictureId',
         otherKey: 'userId'
       });
   };
 };
-  Pokemon.init({
+  Picture.init({
     name: DataTypes.STRING,
     img: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Pokemon',
+    modelName: 'Picture',
   });
-  return Pokemon;
+  return Picture;
 };
 
 

@@ -9,14 +9,14 @@
 <body>
     <h1>My Pictures</h1>
     <a href="/">Home</a></br></br></br>
-    <!-- <a href="/users/profile">Edit Profile</a></br></br></br>  -->
+    
     <nav>
-        <a href="/pokemon/new">Post a new Picture</a> 
-        <ul class="pokemon">
-            <% pokemons.forEach((pokemon) => { %>
-                <li><a href="/pokemon/<%= pokemon.id %>"><%= pokemon.name %></a></br>
-                    <a href="/pokemon/<%= pokemon.id %>/edit">Edit</a></br>
-                    <form action="/pokemon/<%= pokemon.id %>?_method=DELETE" method="POST"> 
+        <a href="/picture/new">Post a new Picture</a> 
+        <ul class="picture">
+            <% pictures.forEach((picture) => { %>
+                <li><a href="/picture/<%= picture.id %>"><%= picture.name %></a></br>
+                    <a href="/picture/<%= picture.id %>/edit">Edit</a></br>
+                    <form action="/picture/<%= picture.id %>?_method=DELETE" method="POST"> 
                         <input type="submit" value="DELETE"/>
                     </form>  
                       

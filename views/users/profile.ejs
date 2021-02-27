@@ -20,14 +20,7 @@
       <input type="text" name="password" value="<%=player.password%>" />
       <br />
       <br />
-      <!-- Team:
-      <select name="teamId">
-	<% for ( let i = 0; i < teams.length; i++ ) { let selected = ( i == 0 )
-	? "selected" : ""; %>
-	<option value="<%=teams[i].id%>" selected><%=teams[i].name%> </option>
-	<% } %>
-      </select> -->
-
+      
       <br />
       <br />
       <input type="submit" value="Edit Profile" />
@@ -39,16 +32,9 @@
     <br /><br />
     <a href="/">Home</a></br>
     <br /><br />
-    <a href="/pokemon">View My Pictures</a>
+    <a href="/picture">View My Pictures</a>
 
-    <!-- <h3>Pokemon added by you:</h3>
-    <% for (let i = 0; i < player.Pokemons.length; i++){ %>
-    <li>
-      <%=player.Pokemons[i].name%></a>
-    </li>
-    <br />
-    <% } %> -->
-
+   
     <br /><br />
   </body>
 </html>

@@ -6,10 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
       User.belongsTo(models.Team, { foreignKey: "teamId" });
-      User.belongsToMany(models.Pokemon, {
-        through: 'PlayerPokemon',
+      User.belongsToMany(models.Picture, {
+        through: 'PlayerPicture',
         foreignKey: 'userId',
-        otherKey: 'pokemonId'
+        otherKey: 'pictureId'
       });
     };
   };

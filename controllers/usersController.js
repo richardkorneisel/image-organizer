@@ -1,10 +1,10 @@
-const express = require("express");     //still using express
-const router = express.Router();        //need express router
+const express = require("express");     
+const router = express.Router();        
 
-// const users = require("../users");   //location of model(data)
+
 const User = require('../Models').User;
 const Team = require('../Models').Team;
-const Pokemon = require('../Models').Pokemon;
+const Picture = require('../Models').Picture;
 //Index (Home)page
 router.get('/', (req, res) => {                 
   res.render('users/index.ejs')     
@@ -43,19 +43,19 @@ router.post('/profile', (req, res)=>{
   });
 
 router.get("/profile/:id", (req, res) => {
-    User.findByPk(req.params.id, {  // was player
-      include: [{ model: Team }, { model: Pokemon }],
+    User.findByPk(req.params.id, {  
+      include: [{ model: Team }, { model: Picture }],
     }).then((singlePlayer) => {
       Team.findAll().then((allTeams) => {
         console.log(singlePlayer);
         res.render("users/profile.ejs", {
-      player: singlePlayer, //was player
+      player: singlePlayer, 
       teams: allTeams,
         });
       });
     });
   });
-// Used above for template
+
 router.get("/login", (req, res) => {
     res.render("users/login.ejs");
 });
@@ -78,4 +78,4 @@ router.delete('/:id', (req, res) =>{
   }); 
 
 
-module.exports = router; //required, put on bottom
+module.exports = router; 

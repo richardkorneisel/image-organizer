@@ -1,6 +1,6 @@
-# Name - pokemon-and-picture-organizer-project-2-1st-full-stack-app
+# Name - image-organizer
 
-pokemon-and-picture-organizer-project-2-1st-full-stack-app is a project to create am appliation that 
+image-organizer is a project to create an appliation that 
 
     - is built by me, using Node.js, Postgres, Express and EJS
     - adheres to the MVC file structure: Models, Views, Controllers
@@ -32,12 +32,11 @@ pokemon-and-picture-organizer-project-2-1st-full-stack-app is a project to creat
   - The starter code had built in JWT-AUTH built in.  My code at times conflicted with this encryption.  This and other route delays was not going to allow me to finish a viable product on time so I scrapped this line of code and decided to grab a lab project, make it work so I could turn in a project.
   - The intent would be to finish or move routes from the lab project and get this initial app up and running.
   
-  ### Working App - pokemon-and-picture-organizer-project-2-1st-full-stack-app
-  - A project that meets the minimun viable product (MVP) requirements can be found at https://github.com/richardkorneisel/pokemon-app
-  - This is a modification of a lab project.  I had built the routes and had to finish making the routes functional.
+  ### Working App - image-organizer
+  - A project that meets the minimun viable product (MVP) requirements can be found at https://github.com/richardkorneisel/image-organizer
+  - This is a modification of a combination lab and homework project.  I had built the routes and had to finish making the routes functional. 
   
   #### Unfinished Issues
-  - Code still has descriptions and tags from lab code. Need to covert to make more meaninful to future developers.
   - App requires user to download link to picture.  Want to add the ability to navigate to the picture and download.
   - App was to have a date, event name, event discription and the picture.  Did not have time to successfully migrate these changes.  
   - App needs to seperate pictures by event and prevent user from seeing other users pictures. 

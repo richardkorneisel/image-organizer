@@ -8,10 +8,10 @@
 </head>
 <body>
     <h1>Edit Picture Page</h1>
-    <form action="/pokemon/<%= pokemon.id %>?_method=PUT" method="POST"> 
+    <form action="/picture/<%= picture.id %>?_method=PUT" method="POST"> 
 		<!--  NOTE: the form is pre-populated with values for the server-->
-		Name: <input type="text" name="name" value="<%=pokemon.name%>"/><br/>
-		Img: <input type="image" name="image" value="<%=pokemon.image%>"/><br/>
+		Name: <input type="text" name="name" value="<%=picture.name%>"/><br/>
+		Img: <input type="image" name="image" value="<%=picture.image%>"/><br/>
 		
 		<br/>
 		<input type="submit" name="" value="Submit Changes"/>
