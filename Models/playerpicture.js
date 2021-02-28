@@ -3,16 +3,16 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class PlayerImage extends Model {
+  class PlayerPicture extends Model {
     static associate(models) {
     };
   };
-  PlayerImage.init({
+  PlayerPicture.init({
     userId: DataTypes.INTEGER,
     pictureId: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'PlayerImage',
+    modelName: 'PlayerPicture',
   });
-  return PlayerImage;
+  return PlayerPicture;
 };

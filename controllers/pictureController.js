@@ -28,8 +28,8 @@ router.post("/", (req, res) => {
       req.body.readyToEat = false;
     }
   
-    Picture.create(req.body).then((newpicture) => {
-      console.log(newpicture)
+    Picture.create(req.body).then((newPicture) => {
+      console.log(newPicture)
       res.redirect("/picture");
     });
   });

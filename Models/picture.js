@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
    static associate(models) {
       Picture.belongsToMany(models.User, {
         through: 'PlayerPicture',
-        foreignKey: 'PictureId',
+        foreignKey: 'pictureId',
         otherKey: 'userId'
       });
   };
