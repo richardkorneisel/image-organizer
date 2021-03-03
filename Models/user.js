@@ -5,9 +5,8 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
-      User.belongsTo(models.Team, { foreignKey: "teamId" });
       User.belongsToMany(models.Picture, {
-        through: 'PlayerPicture',
+        through: 'UserPicture',
         foreignKey: 'userId',
         otherKey: 'pictureId'
       });
@@ -17,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     username: DataTypes.STRING,
     password: DataTypes.STRING,
-    teamId: DataTypes.INTEGER,
+    
   }, {
     sequelize,
     modelName: 'User',

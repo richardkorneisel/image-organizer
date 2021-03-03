@@ -11,7 +11,7 @@ module.exports = {
           password: "prettyawesome",
           createdAt: new Date(),
           updatedAt: new Date(),
-          teamId: 1,
+          
         },
         {
           name: "Clark Kent",
@@ -19,7 +19,7 @@ module.exports = {
           password: "canfly",
           createdAt: new Date(),
           updatedAt: new Date(),
-          teamId: 2
+          
         },
         {
           name: "Bruce Wayne",
@@ -27,7 +27,7 @@ module.exports = {
           password: "hasgadgets",
           createdAt: new Date(),
           updatedAt: new Date(),
-          teamId: 3
+          
         },
       ],
       {}

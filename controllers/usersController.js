@@ -3,7 +3,7 @@ const router = express.Router();
 
 
 const User = require('../Models').User;
-const Team = require('../Models').Team;
+
 const Picture = require('../Models').Picture;
 //Index (Home)page
 router.get('/', (req, res) => {                 
@@ -43,18 +43,15 @@ router.post('/profile', (req, res)=>{
   });
 
 router.get("/profile/:id", (req, res) => {
-    User.findByPk(req.params.id, {  
-      include: [{ model: Team }, { model: Picture }],
-    }).then((singlePlayer) => {
-      Team.findAll().then((allTeams) => {
-        console.log(singlePlayer);
-        res.render("users/profile.ejs", {
-      player: singlePlayer, 
-      teams: allTeams,
-        });
-      });
+  User.findByPk(req.params.id, {
+    include: [{ model: Picture }],
+  }).then((singleUser) => {
+    console.log(singleUser);
+    res.render("users/profile.ejs", {
+      user: singleUser,
     });
   });
+});
 
 router.get("/login", (req, res) => {
     res.render("users/login.ejs");

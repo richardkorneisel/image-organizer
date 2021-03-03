@@ -21,6 +21,6 @@ app.get("/", (req, res) => {
   });
 
 app.listen(process.env.PORT, ()=>{
-    console.log("I am listening");
+    console.log("I am listening", process.env.PORT);
 });
     
