@@ -43,7 +43,7 @@ image-organizer is a project to create an appliation that
 
 ## Installation
 
-You can open this website from Heroku at https://image-organizer-project-2.herokuapp.com/  .  Main repository for project is at https://dashboard.heroku.com/apps/image-organizer-project-2  .
+You can open this website from Heroku at https://image-organizer-2.herokuapp.com/  .  Main repository for project is at https://dashboard.heroku.com/apps/image-organizer-2 .
 
 ## Technologies Used
 This project is a full stack app
